@@ -6,4 +6,7 @@ import pandas as pd
 rutaFichero = input("Introduce la ruta completa del fichero Excel: ")
 df = pd.read_excel(rutaFichero)
 
-print(df.email)
+# elimina duplicados
+removeDuplicates = df.drop_duplicates(subset=["email"])
+
+print(removeDuplicates.email)
